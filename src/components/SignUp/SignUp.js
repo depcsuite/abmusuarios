@@ -5,7 +5,7 @@ import Estilos from '../SignUp/style.module.css';
 
 function SignUp(props) {
 
-    const [nombre, setNombre] = useState('');
+    const [nombre, pepito] = useState('');
     const [usuario, setUsuario] = useState('');
     const [password, setPassword] = useState('');
 
@@ -14,7 +14,7 @@ function SignUp(props) {
             const data = await setUserData(nombre, usuario, password);
             alert(data.msg);
             if (data.code === 200) {
-                setNombre('');
+                pepito('');
                 setUsuario('');
                 setPassword('');
             }
@@ -24,7 +24,7 @@ function SignUp(props) {
     }
 
     const handleChange = (e) => {
-        setNombre(e.target.value);
+        pepito(e.target.value);
     }
 
     const handleChangeUser = (e) => {
@@ -53,7 +53,7 @@ function SignUp(props) {
                 </div>
                 <div style={{ textAlign: 'center', marginTop: 17 }}>
                     <button onClick={handleSubmit}>Registrar</button>
-                </div >
+                </div>
             </div>
         </div>
     );
